@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Task</title>
+    </head>
+    <body>
+       <h1>Список изображений</h1>
+        {% for image in object_list %}
+        <!-- Выводим список всех сохраненных изображений  -->
+        <a href="{% url 'detail' pk=image.id %}"><h3>{{image.name}}</h3></a>
+        <!-- если список пустой  -->
+        {% empty %}
+        <p>Нет доступных изображений</p>
+        {% endfor %}
+        <a href="{% url 'new' %}"><h4>Добавить изображение</h4></a>
+    </body>
+</html>

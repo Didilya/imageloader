@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Task</title>
+    </head>
+    <body>
+       <h1>Новое изображение</h1>
+        <form action = "{% url 'new' %}" method = "POST" enctype="multipart/form-data">
+            <br/><strong >{{image.name}}</strong><br/>
+            {% csrf_token %}
+            {{ form.as_p }}          
+        <input type="submit" value="Сохранить">
+        </form>
+    </body>
+</html>
